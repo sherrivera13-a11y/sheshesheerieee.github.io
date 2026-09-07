@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio and resume of Avery Morgan, product designer and creative technologist." />
+  <title>Avery Morgan — Product Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+  <style>
+    :root { --ink:#172126; --paper:#f5f3ed; --lime:#c9f05b; --coral:#ff6d4d; --muted:#687278; --line:#d8d9d4; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:Manrope, sans-serif; }
+    a { color:inherit; text-decoration:none; }
+    .wrap { max-width:1200px; margin:auto; padding:0 32px; }
+    .mono { font:500 11px/1.35 "DM Mono", monospace; letter-spacing:.08em; text-transform:uppercase; }
+    nav { display:flex; align-items:center; justify-content:space-between; padding:24px 0; border-bottom:1px solid var(--line); }
+    .brand { font-size:18px; font-weight:800; letter-spacing:-.06em; }
+    .brand i { color:var(--coral); font-style:normal; }
+    nav ul { display:flex; list-style:none; padding:0; margin:0; gap:28px; font-size:13px; font-weight:700; }
+    nav li a:hover { color:var(--coral); }
+    .hero { min-height:630px; padding:78px 0 56px; display:grid; grid-template-columns:1.6fr .65fr; gap:42px; position:relative; }
+    .eyebrow { display:flex; align-items:center; gap:9px; color:var(--muted); }
+    .dot { width:8px; height:8px; border-radius:50%; background:var(--lime); box-shadow:0 0 0 4px #e5f3b4; }
+    h1 { max-width:820px; margin:25px 0 28px; font-size:clamp(48px,7vw,94px); line-height:.98; letter-spacing:-.075em; font-weight:800; }
+    h1 em { font-family:"Playfair Display", serif; font-weight:600; letter-spacing:-.06em; }
+    .intro { max-width:575px; color:#465156; font-size:17px; line-height:1.65; }
+    .hero-actions { display:flex; align-items:center; gap:22px; margin-top:38px; }
+    .button { display:inline-flex; align-items:center; gap:12px; background:var(--ink); color:white; padding:15px 20px; border-radius:2px; font-size:13px; font-weight:800; transition:.2s; }
+    .button:hover { transform:translateY(-3px); background:var(--coral); }
+    .text-link { border-bottom:1px solid var(--ink); padding-bottom:3px; font-size:13px; font-weight:700; }
+    .portrait { align-self:end; position:relative; background:#d9e3d3; min-height:390px; overflow:hidden; }
+    .portrait::before { content:""; position:absolute; width:300px; height:300px; border-radius:50%; background:var(--coral); right:-100px; top:-52px; }
+    .portrait::after { content:"AM"; position:absolute; left:25px; bottom:6px; font:700 145px/.8 "Playfair Display", serif; letter-spacing:-.13em; color:#eff2e7; }
+    .portrait-note { position:absolute; left:23px; top:24px; color:#3f4a42; z-index:1; }
+    .scroll-note { align-self:end; justify-self:start; writing-mode:vertical-rl; color:var(--muted); }
+    section { border-top:1px solid var(--line); padding:90px 0; }
+    .section-label { color:var(--muted); margin-bottom:35px; }
+    .about-grid { display:grid; grid-template-columns:.55fr 1.45fr; gap:35px; }
+    h2 { margin:0; font-size:clamp(31px,4vw,52px); line-height:1.08; letter-spacing:-.06em; }
+    .about-text { max-width:710px; font-size:20px; line-height:1.62; letter-spacing:-.025em; }
+    .about-text p:first-child { margin-top:0; }
+    .facts { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:42px; }
+    .fact { border-top:2px solid var(--ink); padding-top:13px; }
+    .fact strong { display:block; font-size:24px; letter-spacing:-.06em; }
+    .fact span { color:var(--muted); font-size:12px; }
+    .work-list { border-top:1px solid var(--ink); }
+    .work-item { display:grid; grid-template-columns:100px 1.2fr .9fr 35px; gap:20px; align-items:center; padding:25px 0; border-bottom:1px solid var(--line); transition:.2s; }
+    .work-item:hover { padding-left:13px; background:#eeece5; }
+    .work-item h3 { margin:0; font-size:24px; letter-spacing:-.05em; }
+    .work-item p { margin:0; color:var(--muted); font-size:13px; line-height:1.5; }
+    .arrow { font-size:27px; text-align:right; }
+    .resume-grid { display:grid; grid-template-columns:1fr 1fr; gap:70px; }
+    .resume-grid h3 { margin:0 0 25px; font-size:14px; text-transform:uppercase; letter-spacing:.08em; }
+    .role { display:grid; grid-template-columns:90px 1fr; gap:18px; border-top:1px solid var(--line); padding:17px 0; }
+    .role time { color:var(--muted); font:11px/1.4 "DM Mono", monospace; }
+    .role strong { display:block; letter-spacing:-.03em; font-size:15px; }
+    .role span { color:var(--muted); font-size:13px; }
+    .skills { list-style:none; padding:0; margin:0; display:flex; flex-wrap:wrap; gap:9px; }
+    .skills li { border:1px solid var(--ink); padding:9px 12px; font-size:12px; font-weight:700; }
+    .contact { background:var(--ink); color:var(--paper); border-top:0; padding:95px 0 30px; }
+    .contact .section-label { color:#acb6b7; }
+    .contact h2 { max-width:760px; font-size:clamp(42px,6vw,78px); }
+    .contact h2 em { color:var(--lime); font-family:"Playfair Display", serif; font-weight:600; }
+    .email { display:inline-block; margin-top:35px; font-size:clamp(23px,3vw,40px); font-weight:800; letter-spacing:-.06em; border-bottom:3px solid var(--coral); }
+    footer { display:flex; justify-content:space-between; align-items:end; margin-top:90px; padding-top:20px; border-top:1px solid #415056; color:#bac3c3; }
+    footer .social { display:flex; gap:20px; }
+    footer a:hover { color:var(--lime); }
+    @media (max-width:720px) { .wrap{padding:0 20px} nav ul{gap:14px;font-size:11px}.hero{grid-template-columns:1fr;min-height:auto;padding-top:55px}.portrait{min-height:220px;max-width:330px}.scroll-note{display:none}.about-grid,.resume-grid{grid-template-columns:1fr;gap:28px}.facts{grid-template-columns:repeat(3,1fr)}.work-item{grid-template-columns:62px 1fr 25px}.work-item p{display:none} section{padding:65px 0}footer{margin-top:65px;align-items:start;gap:20px;flex-direction:column}.contact{padding-top:65px} }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="wrap">
+      <nav><a class="brand" href="#top">Avery<i>.</i></a><ul><li><a href="#work">Work</a></li><li><a href="#resume">Resume</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+      <header class="hero" id="top">
+        <div>
+          <div class="eyebrow mono"><span class="dot"></span> Available for selected projects · 2026</div>
+          <h1>I build useful things with <em>clarity</em> and character.</h1>
+          <p class="intro">I’m Avery Morgan, a product designer and creative technologist turning complicated ideas into warm, intuitive digital experiences.</p>
+          <div class="hero-actions"><a class="button" href="#work">Explore my work <span>↘</span></a><a class="text-link" href="#resume">View resume</a></div>
+        </div>
+        <aside class="portrait"><span class="portrait-note mono">Based in Brooklyn<br>Working everywhere</span></aside>
+        <span class="scroll-note mono">Scroll to discover</span>
+      </header>
+    </div>
+
+    <section id="about"><div class="wrap"><div class="about-grid"><div class="section-label mono">01 / About</div><div><h2>Design with a point of view.</h2><div class="about-text"><p>My practice sits where systems thinking meets visual storytelling. I partner with ambitious teams to make products that are easier to understand, more enjoyable to use, and built to last.</p><p>I care about asking the right questions early—and keeping the humans on the other side of the screen in every decision.</p></div><div class="facts"><div class="fact"><strong>8+</strong><span>Years designing</span></div><div class="fact"><strong>24</strong><span>Products launched</span></div><div class="fact"><strong>12</strong><span>Teams supported</span></div></div></div></div></div></section>
+
+    <section id="work"><div class="wrap"><div class="section-label mono">02 / Selected work</div><div class="work-list"><a class="work-item" href="#contact"><span class="mono">01 / 2025</span><div><h3>Northstar Health</h3><p>A calmer, more human care experience for 2M+ members.</p></div><span class="mono">Product strategy · UX/UI</span><span class="arrow">↗</span></a><a class="work-item" href="#contact"><span class="mono">02 / 2024</span><div><h3>Field Notes</h3><p>Helping distributed teams turn research into shared understanding.</p></div><span class="mono">0→1 product · Brand</span><span class="arrow">↗</span></a><a class="work-item" href="#contact"><span class="mono">03 / 2023</span><div><h3>Studio Alma</h3><p>A digital home for an independent architecture practice.</p></div><span class="mono">Web design · Development</span><span class="arrow">↗</span></a></div></div></section>
+
+    <section id="resume"><div class="wrap"><div class="section-label mono">03 / Resume</div><div class="resume-grid"><div><h3>Experience</h3><article class="role"><time>2022 — now</time><div><strong>Independent Designer</strong><span>Product design, creative direction &amp; prototyping</span></div></article><article class="role"><time>2019 — 2022</time><div><strong>Lead Product Designer · Tidal Labs</strong><span>Led experience design across a growing B2B platform</span></div></article><article class="role"><time>2017 — 2019</time><div><strong>Product Designer · Common Thread</strong><span>Designed tools for collaborative creative work</span></div></article></div><div><h3>Capabilities</h3><ul class="skills"><li>Product strategy</li><li>UX research</li><li>Interaction design</li><li>Design systems</li><li>Prototyping</li><li>Creative direction</li><li>HTML / CSS</li><li>Workshop facilitation</li></ul></div></div></div></section>
+  </main>
+  <section class="contact" id="contact"><div class="wrap"><div class="section-label mono">04 / Get in touch</div><h2>Have a good problem?<br>Let’s make it <em>better.</em></h2><a class="email" href="mailto:hello@averymorgan.design">hello@averymorgan.design</a><footer><span class="mono">© 2026 Avery Morgan</span><div class="social mono"><a href="#top">LinkedIn</a><a href="#top">Instagram</a><a href="#top">Are.na</a></div></footer></div></section>
+</body>
+</html>
